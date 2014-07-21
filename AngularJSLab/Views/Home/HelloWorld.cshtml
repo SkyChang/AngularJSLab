@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "HelloWorld";
+}
+
+<h2>HelloWorld</h2>
+
+<div ng-app="helloWorldApp" ng-controller="hello">
+    {{ helloString }}
+
+</div>
+
+@section Scripts{
+<script src="~/Scripts/app/HelloWorld/hello-world-app.js"></script>
+<script src="~/Scripts/app/HelloWorld/Controllers/hello-controller.js"></script>
+}
