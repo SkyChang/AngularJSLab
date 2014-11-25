@@ -1,0 +1,52 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+
+</head>
+<body>
+    <h1>Lession 5</h1>
+
+    <div ng-app="eventApp" ng-controller="EventListCtrl">
+        <!-- 輸入以下字串 -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    Search: <input ng-model="query.$"> <br>
+                    Search Date :<input ng-model="query.date"><br>
+                    Search Name :<input ng-model="query.name"><br>
+                    And Search : <input type="checkbox" ng-model="strict"><br>
+                    Sort:
+                    <select ng-model="Predicate">
+                        <option value="date">date</option>
+                        <option value="name">name</option>
+                    </select>
+                    <input type="radio" ng-model="reverse" ng-value="false">Desc
+                    <input type="radio" ng-model="reverse" ng-value="true">Asc
+                    @*<select ng-model="reverse">
+                        <option value="true">最新在前</option>
+                        <option value="false">最新在後</option>
+                    </select>*@
+                </div>
+                <div class="col-md-10">
+                    <ul>
+                        {{reverseVale.shade}}
+                        <li ng-repeat="event in events | filter:query:strict | orderBy:Predicate:reverse">
+                            <span>{{event.date}}</span>
+                            <p>{{event.name}}</p>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/app/event/controllers/eventListCtrl.js"></script>
+</body>
+</html>
