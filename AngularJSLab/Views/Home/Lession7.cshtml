@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AngularJS Demo</title>
-
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <h1>Lession 5</h1>
@@ -28,17 +28,24 @@
                     <select ng-model="reverseVale" ng-options="reverse.name for reverse in reverses"></select>
                 </div>
                 <div class="col-md-10">
-                    <ul>
-                        <li ng-repeat="event in events | filter:query:strict | orderBy:Predicate:reverseVale.shade">
-                            <span>{{event.date}}</span>
-                            <p>{{event.name}}</p>
-                        </li>
-                    </ul>
-
+                    <div class="row" >
+                        <div class="col-sm-6 col-md-4" ng-repeat="event in events | filter:query:strict | orderBy:Predicate:reverseVale.shade">
+                            <div class="thumbnail">
+                                <img ng-src="{{event.imgUrl}}"/>
+                                <div class="caption">
+                                    <h3><a href="#/events/{{event.id}}">{{event.date}}</a></h3>
+                                    <p>{{event.name}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </div>
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/app/event/controllers/eventListCtrl6.js"></script>
 </body>

@@ -79,7 +79,17 @@ namespace AngularJSLab.Controllers
             return View();
         }
 
-        public ActionResult Lession8()
+        public ActionResult Lession8Index()
+        {
+            return View();
+        }
+
+        public ActionResult Lession8Detail()
+        {
+            return View();
+        }
+
+        public ActionResult Lession8List()
         {
             return View();
         }
