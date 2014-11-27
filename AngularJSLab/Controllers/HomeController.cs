@@ -14,6 +14,7 @@ namespace AngularJSLab.Controllers
             return View();
         }
 
+
         public ActionResult FirstExampleDataBinding()
         {
             return View();
@@ -94,7 +95,12 @@ namespace AngularJSLab.Controllers
             return View();
         }
 
-        public ActionResult Lession9()
+        public ActionResult Lession9Index()
+        {
+            return View();
+        }
+
+        public ActionResult Lession9Detail()
         {
             return View();
         }

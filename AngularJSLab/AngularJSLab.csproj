@@ -134,10 +134,12 @@
     <Content Include="Scripts\app\DirectiveLab\Common\componets.js" />
     <Content Include="Scripts\app\DirectiveLab\Controllers\directive-lab-controller.js" />
     <Content Include="Scripts\app\DirectiveLab\directive-lab-app.js" />
+    <Content Include="Scripts\app\event\controllers\eventListCtrl9.js" />
     <Content Include="Scripts\app\event\controllers\eventListCtrl8.js" />
     <Content Include="Scripts\app\event\controllers\eventListCtrl6.js" />
     <Content Include="Scripts\app\event\controllers\eventListCtrl.js" />
     <Content Include="Scripts\app\event\app.js" />
+    <Content Include="Scripts\app\event\filter\filterSample.js" />
     <Content Include="Scripts\app\HelloWorld\hello-world-app.js" />
     <Content Include="Scripts\app\HelloWorld\Controllers\hello-controller.js" />
     <Content Include="Scripts\app\ServiceLab\Controllers\service-lab-controller.js" />
@@ -886,6 +888,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\app\event\data\angular-event-data-1.json" />
     <None Include="Scripts\app\event\data\event-data.json" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
@@ -927,6 +930,8 @@
     <Content Include="Views\Home\Lession8List.cshtml" />
     <Content Include="Views\Home\Lession8Detail.cshtml" />
     <Content Include="Views\Home\Lession8Index.cshtml" />
+    <Content Include="Views\Home\Lession9Detail.cshtml" />
+    <Content Include="Views\Home\Lession9Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

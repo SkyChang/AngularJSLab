@@ -9,7 +9,8 @@
             controller: 'EventListCtrl'
         }).
         when('/events/:eventId', {
-            templateUrl: '/Home/lession8Detail',
+            //templateUrl: '/Home/lession8Detail',
+            templateUrl: '/Home/lession9Detail',
             controller: 'EventDetailCtrl'
         }).
         otherwise({
