@@ -903,6 +903,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -932,6 +933,15 @@
     <Content Include="Views\Home\Lession8Index.cshtml" />
     <Content Include="Views\Home\Lession9Detail.cshtml" />
     <Content Include="Views\Home\Lession9Index.cshtml" />
+    <Content Include="Views\Filter\filter.cshtml" />
+    <Content Include="Views\Filter\currency.cshtml" />
+    <Content Include="Views\Filter\number.cshtml" />
+    <Content Include="Views\Filter\date.cshtml" />
+    <Content Include="Views\Filter\json.cshtml" />
+    <Content Include="Views\Filter\lowercase.cshtml" />
+    <Content Include="Views\Filter\uppercase.cshtml" />
+    <Content Include="Views\Filter\limitTo.cshtml" />
+    <Content Include="Views\Filter\orderBy.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

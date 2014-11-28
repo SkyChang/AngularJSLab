@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>lowercase</title>
+</head>
+<body ng-app="">
+    <script src="~/Scripts/angular.min.js"></script>
+    <div ng-init="lowercase_expression='ABC'">
+        {{ lowercase_expression | lowercase}}
+    </div>
+</body>
+</html>
