@@ -1,11 +1,13 @@
 ﻿angular.module('eventApp', [
   'ngRoute',
-  'eventControllers'
+  'eventControllers',
+  //'eventDirective'
 ]).config(['$routeProvider',
   function ($routeProvider) {
       $routeProvider.
         when('/events', {
             templateUrl: '/Home/lession8List',
+            //templateUrl: '/Home/lession10List',
             controller: 'EventListCtrl'
         }).
         when('/events/:eventId', {

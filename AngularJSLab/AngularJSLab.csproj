@@ -134,11 +134,15 @@
     <Content Include="Scripts\app\DirectiveLab\Common\componets.js" />
     <Content Include="Scripts\app\DirectiveLab\Controllers\directive-lab-controller.js" />
     <Content Include="Scripts\app\DirectiveLab\directive-lab-app.js" />
+    <Content Include="Scripts\app\event\Common\eventDiv.js" />
+    <Content Include="Scripts\app\event\Common\event-div-template.html" />
+    <Content Include="Scripts\app\event\controllers\eventListCtrl10.js" />
     <Content Include="Scripts\app\event\controllers\eventListCtrl9.js" />
     <Content Include="Scripts\app\event\controllers\eventListCtrl8.js" />
     <Content Include="Scripts\app\event\controllers\eventListCtrl6.js" />
     <Content Include="Scripts\app\event\controllers\eventListCtrl.js" />
     <Content Include="Scripts\app\event\app.js" />
+    <Content Include="Scripts\app\event\services\eventsService.js" />
     <Content Include="Scripts\app\event\filter\filterSample.js" />
     <Content Include="Scripts\app\HelloWorld\hello-world-app.js" />
     <Content Include="Scripts\app\HelloWorld\Controllers\hello-controller.js" />
@@ -905,6 +909,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PromiseController.cs" />
+    <Compile Include="Controllers\ValidationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -943,6 +949,10 @@
     <Content Include="Views\Filter\limitTo.cshtml" />
     <Content Include="Views\Filter\orderBy.cshtml" />
     <Content Include="Views\Filter\Customer.cshtml" />
+    <Content Include="Views\Home\Lession10Index.cshtml" />
+    <Content Include="Views\Home\Lession10List.cshtml" />
+    <Content Include="Views\Validation\Index.cshtml" />
+    <Content Include="Views\Promise\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

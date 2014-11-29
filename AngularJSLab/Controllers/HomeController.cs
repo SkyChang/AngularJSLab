@@ -104,5 +104,15 @@ namespace AngularJSLab.Controllers
         {
             return View();
         }
+
+        public ActionResult Lession10Index()
+        {
+            return View();
+        }
+
+        public ActionResult Lession10List()
+        {
+            return View();
+        }
     }
 }

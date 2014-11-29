@@ -1,5 +1,5 @@
-﻿angular.module('eventControllers', [])
-    .controller('EventListCtrl', function ($scope, $http) {
+﻿angular.module('eventControllers', ['eventServices'])
+    .controller('EventListCtrl', function ($scope, $http, eventServices) {
 
         $scope.Predicate = 'name';
         $scope.reverse = false;
@@ -12,14 +12,14 @@
         //#region Lession 5
         //#endregion
 
-        $http.get('/Scripts/app/event/data/event-data.json').success(function (data) {
-            $scope.events = data;
-        });
+        $scope.events = eventServices.query({ fileName: 'event-data' });
 
-    }).controller('EventDetailCtrl', ['$scope', '$routeParams','$http',
-        function ($scope, $routeParams, $http) {
-            $http.get('/Scripts/app/event/data/angular-event-data-' +
-                $routeParams.eventId + '.json').success(function (data) {
-                $scope.event = data;
-            });
+        //$http.get('/Scripts/app/event/data/event-data.json').success(function (data) {
+        //    $scope.events = data;
+        //});
+
+    }).controller('EventDetailCtrl', ['$scope', '$routeParams','$http','eventServices',
+        function ($scope, $routeParams, $http, eventServices) {
+            $scope.event = eventServices.get({ fileName: 'angular-event-data-' + $routeParams.eventId });
+          
           }]);
