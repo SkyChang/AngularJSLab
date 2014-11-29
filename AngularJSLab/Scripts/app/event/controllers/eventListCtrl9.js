@@ -18,7 +18,8 @@
 
     }).controller('EventDetailCtrl', ['$scope', '$routeParams','$http',
         function ($scope, $routeParams, $http) {
-            $http.get('/Scripts/app/event/data/angular-event-data-' + $routeParams.eventId + '.json').success(function (data) {
+            $http.get('/Scripts/app/event/data/angular-event-data-' +
+                $routeParams.eventId + '.json').success(function (data) {
                 $scope.event = data;
             });
           }]);

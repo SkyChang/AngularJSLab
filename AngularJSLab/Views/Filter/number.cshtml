@@ -10,15 +10,15 @@
     <meta name="viewport" content="width=device-width" />
     <title>number</title>
 </head>
-<body ng-app="numberFilterExample">
+<body ng-app="">
     <script src="~/Scripts/angular.min.js"></script>
-    <script>
+    @*<script>
         angular.module('numberFilterExample', [])
           .controller('ExampleController', ['$scope', function ($scope) {
               $scope.val = 1234.56789;
           }]);
-    </script>
-    <div ng-controller="ExampleController">
+    </script>*@
+    <div>
         Enter number: <input ng-model='val'><br>
         Default formatting: <span id='number-default'>{{val | number}}</span><br>
         No fractions: <span>{{val | number:0}}</span><br>

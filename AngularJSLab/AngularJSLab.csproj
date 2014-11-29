@@ -942,6 +942,7 @@
     <Content Include="Views\Filter\uppercase.cshtml" />
     <Content Include="Views\Filter\limitTo.cshtml" />
     <Content Include="Views\Filter\orderBy.cshtml" />
+    <Content Include="Views\Filter\Customer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
