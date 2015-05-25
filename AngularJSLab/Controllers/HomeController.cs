@@ -20,11 +20,6 @@ namespace AngularJSLab.Controllers
             return View();
         }
 
-        public ActionResult HelloWorld()
-        {
-            return View();
-        }
-
         public ActionResult ServiceLab()
         {
             return View();

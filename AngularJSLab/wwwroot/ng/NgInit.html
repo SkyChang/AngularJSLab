@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+</head>
+<body>
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        @*
+        【方法一】透過ng-init設定初始值
+        *@
+        <div ng-init="SayHello='Hello';To='World'"></div>
+
+        <h3>{{SayHello}} {{To}}!</h3>
+    </div>
+
+    <script src="/Scripts/angular.js"></script>
+    <script>
+    angular.module('OverviewApp', [])
+           .controller('NgControllerController', function ($scope)
+           {
+               //【方法二】在js設定初始值
+               $scope.SayHello = 'Hellocc';
+               $scope.To = 'Worldcc';
+           })
+    </script>
+</body>
+</html>
+
+
+
+
+

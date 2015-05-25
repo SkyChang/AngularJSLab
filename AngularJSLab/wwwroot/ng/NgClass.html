@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+    <style>
+        .active {
+            color: red;
+        }
+
+        .inactive {
+            color: #484848;
+        }
+
+        .isCurrentPage {
+            color: red;
+        }
+
+        .isNotCurrentPage {
+            color: #484848;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        .tomato {
+            color: tomato;
+        }
+
+        .gold {
+            color: gold;
+        }
+
+        .turquoise {
+            color: turquoise;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        @*註：{true:'樣式名稱1',false:'樣式名稱2'}[boolean變數]*@
+        <h3 ng-class="{true:'active',false:'inactive'}[isActive]" ng-mouseover="MouseOver()" ng-mouseleave="MouseLeave()">Hello World</h3>
+
+        <hr />
+
+        CurrentPage：<input type="number" ng-model="CurrentPage" />
+        <ul ng-init="PageClass={true:'isCurrentPage',false:'isNotCurrentPage'}">
+            <li ng-repeat="page in PageList" ng-class="PageClass[page==CurrentPage]">Page {{page}}</li>
+        </ul>
+
+        <hr />
+
+        <input type="checkbox" ng-model="boolRed" />Red
+        <input type="checkbox" ng-model="boolBold" />Bold
+        <input type="checkbox" ng-model="boolStrike" />Strike
+        <p ng-class="{red:boolRed,bold:boolBold,strike:boolStrike}">ClassTest</p>
+
+        <hr />
+
+        <h3 ng-click="count=count+1" ng-class="ClassList[count%ClassList.length]">點點點</h3>
+    </div>
+    <script src="/Scripts/angular.js"></script>
+
+    <script>
+    angular.module('OverviewApp', [])
+           .controller('NgControllerController', function ($scope)
+           {
+               $scope.isActive = false;
+
+               $scope.MouseOver = function ()
+               {
+                   $scope.isActive = true;
+               }
+
+               $scope.MouseLeave = function ()
+               {
+                   $scope.isActive = false;
+               }
+
+               var CreateArray = function (times)
+               {
+                   var arr = [];
+                   for (var i = 1; i <= parseInt(times) ; i++)
+                   {
+                       arr.push(i);
+                   }
+                   return arr;
+               }
+               $scope.CurrentPage = 5;
+               $scope.PageList = CreateArray(10);
+
+               $scope.count = 0;
+               $scope.ClassList = ['tomato', 'gold', 'turquoise'];
+           })
+    </script>
+</body>
+</html>
+
+
+
+
+

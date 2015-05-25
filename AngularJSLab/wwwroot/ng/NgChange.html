@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+</head>
+<body>
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        <h3>
+            <input type="checkbox" ng-model="checked" ng-change="Change()" />
+            {{text}}
+        </h3>
+        <h3>Checked：{{checked}}</h3>
+        <h3>Count：{{count}}</h3>
+    </div>
+
+    <script src="/Scripts/angular.js"></script>
+    <script>
+    angular.module('OverviewApp', [])
+           .controller('NgControllerController', function ($scope)
+           {
+               $scope.checked = false;
+               $scope.count = 0;
+               $scope.text = $scope.checked == true ? '勾屁' : '勾噢';
+
+               $scope.Change = function ()
+               {
+                   $scope.count++;
+                   $scope.text = $scope.checked == true ? '勾屁' : '勾噢';
+               }
+           })
+    </script>
+</body>
+</html>
+
+
+
+
+

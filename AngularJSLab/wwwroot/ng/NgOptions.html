@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+
+    <style>
+        h5 {
+            display: inline;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        <h3>ng-options參數的用法</h3>
+        @*【第一種】基本下拉選單 → text=person.name;ng-model=person;*@
+        @*<select ng-model="selection" ng-options="person.name for person in PersonList">
+            *@
+
+            @*【第二種】自訂下拉選單顯示文字 → text=person.id+' - '+person.name;ng-model=person;*@
+            @*
+            <select ng-model="selection" ng-options="(person.id + ' - ' + person.name) for person in PersonList">
+                *@
+
+                @*【第三種】依據特定欄位群組下拉選單 → text=person.name;ng-model=person;*@
+                @*
+                <select ng-model="selection" ng-options="person.name group by person.gender for person in PersonList">
+                    *@
+
+                    @*【第四種】自訂下拉選單的ng-model的值 → text=person.name;ng-model=person.id*@
+                    <select ng-model="selection" ng-options="person.id as person.name for person in PersonList">
+                        <option value="">---請選擇---</option>
+                    </select>
+                    →
+                    <h5>{{selection}}</h5>
+                    →
+                    <h5>{{selection.name||'none'}}</h5>
+
+                    <hr />
+
+                    <h3>靜態與動態select的用法比較</h3>
+                    Static：
+                    <select ng-model="StaticSelection">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    →
+                    {{StaticSelection||'none'}}
+                    <br />
+                    Ｄynamic：
+                    <select ng-model="DynamicSelection" ng-options="number for number in NumberList"></select>
+                    →
+                    {{DynamicSelection||'none'}}
+    </div>
+
+    <script src="/Scripts/angular.js"></script>
+
+    <script>
+    angular.module('OverviewApp', [])
+           .controller('NgControllerController', function ($scope)
+           {
+               $scope.PersonList = [{ id: 1, name: 'Sandy', gender: '女' },
+                                    { id: 2, name: 'Jed', gender: '男' },
+                                    { id: 3, name: 'Emma', gender: '女' }]
+
+               //設定<select></select>的初始值（第一種～第三種）
+               $scope.selection = $scope.PersonList[0];
+
+               //設定<select></select>的初始值（第四種）
+               $scope.selection = $scope.PersonList[0].id;
+
+               $scope.NumberList = [1, 2, 3];
+           })
+    </script>
+</body>
+</html>
+
+
+
+
+

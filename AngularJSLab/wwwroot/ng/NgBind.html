@@ -5,17 +5,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AngularJS Demo</title>
-
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
 </head>
 <body>
-    <h1>Layout</h1>
-    <menu></menu>
-
-    @RenderBody()
-
-    @Scripts.Render("~/bundles/angularjs")
-    @RenderSection("scripts", required: false)
+    <div>
+        Name：<input type="text" ng-model="name" />
+        <h3>AngularJS says hello to <span ng-bind="name||'everyone'"></span>!</h3>
+        <h3>{{name||'everyone'}}</h3>
+    </div>
+    <script src="/Scripts/angular.js"></script>
 </body>
 </html>
+
+
+

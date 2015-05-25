@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+
+</head>
+<body>
+    <h1>Lession</h1>
+    <!-- 加上 ng-app -->
+    <div ng-app="helloWorldApp" ng-controller="hello">
+
+        <!--輸入以下字串 -->
+        <span>{{ helloString }}</span>
+
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <!--<script src="/Scripts/app/HelloWorld/app.js"></script>
+    <script src="/Scripts/app/HelloWorld/Controllers/helloController.js"></script>-->
+    <script>
+        angular.module('helloWorldApp', [])
+            .controller('hello', function ($scope) {
+                $scope.helloString = "Hello AngularJS";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+</head>
+<body>
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        Go to：
+        <select ng-model="page" ng-options="page.name for page in pages">
+            <option value="">---請選擇---</option>
+        </select>
+        <div ng-include="page.url"></div>
+    </div>
+
+    <script src="/Scripts/angular.js"></script>
+    <script>
+    angular.module('OverviewApp', [])
+           .controller('NgControllerController', function ($scope)
+           {
+               $scope.pages = [{ name: 'Page1', url: '/Overview/Page1' },
+                               { name: 'Page2', url: '/Overview/Page2' }]
+               $scope.page = $scope.pages[0];
+           })
+    </script>
+</body>
+</html>
+
+
+
+

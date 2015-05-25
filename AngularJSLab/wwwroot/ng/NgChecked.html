@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+    <style>
+        p {
+            margin-left: 20px;
+        }
+
+        img {
+            width: 50px;
+            margin: 5px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        <input type="checkbox" ng-model="all" />
+        選擇全部
+        <br /><br />
+        <p ng-repeat="browser in BrowserList">
+            <input type="checkbox" ng-checked="all" />
+            <img ng-src="{{browser.image}}" />
+            <a ng-href="{{browser.image}}">{{browser.name}}</a>
+        </p>
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script>
+    angular.module('OverviewApp', [])
+           .controller('NgControllerController', function ($scope)
+           {
+               $scope.BrowserList = [{ id: 1, name: 'Chrome', image: '/Images/chrome.png' },
+                                     { id: 2, name: 'Firefox', image: '/Images/firefox.png' },
+                                     { id: 3, name: 'Safari', image: '/Images/safari.png' }]
+           })
+    </script>
+</body>
+</html>
+
+
+
+

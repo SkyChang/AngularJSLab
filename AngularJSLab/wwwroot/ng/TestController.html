@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+</head>
+<body>
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        {{model1}}<br />
+        {{model2}}
+        <div ng-controller="c2">
+            {{model3}}<br />
+            {{model4}}
+        </div>
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script>
+    var module=angular.module('OverviewApp', []);
+    module.controller('NgControllerController', function ($scope)
+    {
+        $scope.model1 = 'mm1';
+        $scope.model3 = 'mm3';
+    })
+    module.controller('c2', function ($scope)
+    {
+        //$scope.model2 = 'mm2';
+        //$parent.model2 = 'mm2';
+        $scope.model4 = 'mm4';
+    })
+    </script>
+</body>
+</html>
+
+
+
+

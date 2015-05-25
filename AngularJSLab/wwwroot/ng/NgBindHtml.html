@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+</head>
+<body>
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        <h3>使用ng-bind</h3>
+        <div ng-bind="HtmlString"></div>
+        <h3>使用ng-bind-html</h3>
+        <div ng-bind-html="HtmlString"></div>
+        <h3>使用ng-bind-html-unsafe</h3>
+        @*註：AngularJS 1.2之後的版本，ng-bind-html-unsafe已被ng-bind-html取代*@
+        <div ng-bind-html-unsafe="HtmlString"></div>
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script>
+    //2 - 載入ngSanitize模組
+    angular.module('OverviewApp', ['ngSanitize'])
+           .controller('NgControllerController', function ($scope)
+           {
+               $scope.HtmlString = '<img src="/Images/AngularJS.png" />';
+           })
+    </script>
+</body>
+</html>
+
+
+
+
+
+

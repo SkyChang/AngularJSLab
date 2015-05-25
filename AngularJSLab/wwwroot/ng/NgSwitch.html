@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+
+    <style>
+        #stage {
+            border: 3px solid black;
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 0 10px 20px 10px;
+            width: 30%;
+        }
+    </style>
+
+</head>
+<body>
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        <button ng-click="SwitchStage()">切換下拉選單</button>
+
+        <div id="stage" ng-switch on="stage">
+            <div ng-switch-when="1">
+                <h3>下拉選單一</h3>
+                @*
+                【錯誤版】
+                註：ng-switch中的ng-model屬於動態產生的sub$scope的管轄範圍，每次switch都會產生新的sub$scope
+                *@
+                @*<select ng-model="stage1select">
+                    *@
+                    <select ng-model="$parent.stage1select">
+                        <option value="">---請選擇---</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    →
+                    @*{{stage1select}}*@
+                    {{$parent.stage1select}}
+            </div>
+            <div ng-switch-when="2">
+                <h3>下拉選單二</h3>
+                @*<select ng-model="stage2select">
+                    *@
+                    <select ng-model="$parent.stage2select">
+                        <option value="">---請選擇---</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    →
+                    @*{{stage2select}}*@
+                    {{$parent.stage2select}}
+            </div>
+            @*<div ng-switch-default>預設區塊</div>*@
+        </div>
+
+        <ul>
+            <li>下拉選單一 → {{stage1select}}</li>
+            <li>下拉選單二 → {{stage2select}}</li>
+        </ul>
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script>
+    angular.module('OverviewApp', [])
+           .controller('NgControllerController', function ($scope)
+           {
+               $scope.stage = 1;
+
+               $scope.SwitchStage = function ()
+               {
+                   $scope.stage = $scope.stage == 1 ? 2 : 1;
+               }
+           })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

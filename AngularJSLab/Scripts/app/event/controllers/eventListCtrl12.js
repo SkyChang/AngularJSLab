@@ -16,7 +16,14 @@
             $scope.events = data;
         });
 
-    }).controller('EventDetailCtrl', ['$scope', '$routeParams',
-        function ($scope, $routeParams) {
-              $scope.eventId = $routeParams.eventId;
+        $scope.eventDivClick = function () {
+            alert("Directive 委派");
+        }
+
+    }).controller('EventDetailCtrl', ['$scope', '$routeParams','$http',
+        function ($scope, $routeParams, $http) {
+            $http.get('/Scripts/app/event/data/angular-event-data-' +
+                $routeParams.eventId + '.json').success(function (data) {
+                $scope.event = data;
+            });
           }]);

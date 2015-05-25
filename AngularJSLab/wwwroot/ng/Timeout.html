@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+</head>
+<body>
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        <h3>利用window物件的setInterval()方法</h3>
+        <button ng-click="StopWindowTimer()">Stop</button>
+        {{WindowTimer}}
+
+        <hr />
+
+        <h3>利用AngularJS的$timeout指令</h3>
+        <button ng-click="StopAngularTimer()">Stop</button>
+        {{AngularTimer}}
+
+        <hr />
+
+        <h3>$timeout Sample</h3>
+        <button ng-click="StartCountDown()">開始倒數</button>
+        <input type="text" ng-model="txt" ng-disabled="bool" />
+
+        @*<input type="text" ng-model="txt" ng-disabled="bool" />*@
+
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script>
+    angular.module('OverviewApp', [])
+            //要使用$timeout須先傳入$timeout
+           .controller('NgControllerController', function ($scope,$timeout)
+           {
+               $scope.WindowTimer = 0;
+               var timer1 = setInterval(function ()
+               {
+                   $scope.WindowTimer++;
+                   //註：$scope.$apply() → http://hamisme.blogspot.tw/2013/06/scopeapply-1-angularjs.html
+                   $scope.$apply();
+               }, 1000);
+               $scope.StopWindowTimer = function ()
+               {
+                   window.clearInterval(timer1);
+               }
+
+               $scope.AngularTimer = 0;
+               $scope.StartAngularTimer = function ()
+               {
+                   $scope.AngularTimer++;
+                   timer2 = $timeout($scope.StartAngularTimer, 1000);
+               }
+               var timer2 = $timeout($scope.StartAngularTimer, 1000);
+               $scope.StopAngularTimer = function ()
+               {
+                   $timeout.cancel(timer2);
+               }
+
+               $scope.bool = false;
+               $scope.txt = '我這裡可以打字噢！';
+               $scope.StartCountDown = function ()
+               {
+                   $timeout(function ()
+                   {
+                       $scope.txt = '為時已晚，我被鎖住了！';
+                       $scope.bool = true;
+                   }, 3000)
+               }
+           })
+    </script>
+</body>
+</html>
+
+
+

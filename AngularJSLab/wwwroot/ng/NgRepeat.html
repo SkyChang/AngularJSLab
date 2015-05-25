@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+</head>
+<body>
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        <h3 ng-repeat="person in PersonList">{{$index+1}}{{$first}} - {{person.name}}（{{person.gender}}）</h3>
+        <h3>共 {{PersonList.length}} 人</h3>
+    </div>
+    <script src="/Scripts/angular.js"></script>
+
+    <script>
+    angular.module('OverviewApp', [])
+           .controller('NgControllerController', function ($scope)
+           {
+               $scope.PersonList = [{ name: 'Sandy', gender: '女' },
+                                    { name: 'Jed', gender: '男' },
+                                    { name: 'Emma', gender: '女' }]
+           })
+    </script>
+</body>
+</html>
+
+
+
+
+

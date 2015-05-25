@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+
+    <style>
+        img {
+            width: 50px;
+            margin: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        <ul>
+            <li ng-repeat="browser in BrowserList">
+                <img ng-src="{{browser.image}}" />
+                {{browser.name}}
+            </li>
+        </ul>
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script>
+    angular.module('OverviewApp', [])
+           .controller('NgControllerController', function ($scope)
+           {
+               $scope.BrowserList = [{ id: 1, name: 'Chrome', image: '/Images/chrome.png' },
+                                     { id: 2, name: 'Firefox', image: '/Images/firefox.png' },
+                                     { id: 3, name: 'Safari', image: '/Images/safari.png' }]
+           })
+    </script>
+</body>
+</html>
+
+
+
+
+

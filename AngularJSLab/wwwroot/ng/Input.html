@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+</head>
+<body>
+
+
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        <h3>原始版：<input type="checkbox" ng-model="OriginalValue" /> - {{OriginalValue}}</h3>
+        <h3>中文版：<input type="checkbox" ng-model="ChineseValue" ng-true-value="真" ng-false-value="假" /> - {{ChineseValue}}</h3>
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script>
+    angular.module('OverviewApp', [])
+           .controller('NgControllerController', function ($scope)
+           {
+               $scope.OriginalValue = true;
+               $scope.ChineseValue = '真';
+           })
+    </script>
+</body>
+</html>
+
+
+
+

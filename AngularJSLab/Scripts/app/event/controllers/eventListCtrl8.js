@@ -1,5 +1,5 @@
-﻿angular.module('eventControllers', [])
-    .controller('EventListCtrl', function ($scope, $http) {
+﻿angular.module('eventApp', [])
+    .controller('eventListCtrl', function ($scope,$http) {
 
         $scope.Predicate = 'name';
         $scope.reverse = false;
@@ -9,14 +9,9 @@
             { name: '最新在後', shade: false }
         ];
         $scope.reverseVale = $scope.reverses[0];
-        //#region Lession 5
-        //#endregion
 
         $http.get('/Scripts/app/event/data/event-data.json').success(function (data) {
             $scope.events = data;
         });
 
-    }).controller('EventDetailCtrl', ['$scope', '$routeParams',
-        function ($scope, $routeParams) {
-              $scope.eventId = $routeParams.eventId;
-          }]);
+    });

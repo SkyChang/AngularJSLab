@@ -1,12 +1,12 @@
 ﻿angular.module('eventApp', [])
-    .controller('EventListCtrl', function ($scope) {
+    .controller('eventListCtrl', function ($scope) {
 
-        //#region Lession 5
+        //#region Lession 7
         $scope.Predicate = 'name';
         $scope.reverse = false;
         //#endregion
 
-        //#region Lession 5-1
+        //#region Lession 7-1
         $scope.reverses = [
             { name: '最新在前', shade: true },
             { name: '最新在後', shade: false }

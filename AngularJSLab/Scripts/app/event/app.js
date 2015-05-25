@@ -6,14 +6,14 @@
   function ($routeProvider) {
       $routeProvider.
         when('/events', {
-            templateUrl: '/Home/lession8List',
+            templateUrl: '/wwwroot/lession10List',
             //templateUrl: '/Home/lession10List',
-            controller: 'EventListCtrl'
+            controller: 'eventListCtrl'
         }).
         when('/events/:eventId', {
             //templateUrl: '/Home/lession8Detail',
-            templateUrl: '/Home/lession9Detail',
-            controller: 'EventDetailCtrl'
+            templateUrl: '/wwwroot/lession11Detail',
+            controller: 'eventDetailCtrl'
         }).
         otherwise({
             redirectTo: '/events'

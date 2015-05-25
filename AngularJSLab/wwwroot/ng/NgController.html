@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+</head>
+<body>
+    2 - ng-controller的值須與NgControllerController.js的function名稱相同
+    <div ng-app ng-controller="NgControllerController">
+        <h3>AngularJS says hello to {{name}}!</h3>
+    </div>
+    *@
+
+    @*
+    【方法二】
+    1 - 宣告ng-app與ng-controller的值
+    *@
+    <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        <h3>AngularJS says hello to {{name}}!</h3>
+    </div>
+
+    <script src="/Scripts/angular.js"></script>
+    <script>
+//註：angular.module(模組名稱（ng-app的值）, [引用的模組, 引用的模組, 引用的模組])
+//　　       .controller(controller名稱（ng-controller的值）, function ($scope)
+//　　       {
+//　　       })
+//註：$scope → NgControllerController管轄範圍的變數
+    angular.module('OverviewApp', [])
+           .controller('NgControllerController',function($scope)
+           {
+               $scope.name = 'everyone';
+           })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
