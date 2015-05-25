@@ -47,6 +47,14 @@ $provide.value("$locale", {
       "fredag",
       "l\u00f8rdag"
     ],
+    "ERANAMES": [
+      "f.Kr.",
+      "e.Kr."
+    ],
+    "ERAS": [
+      "f.Kr.",
+      "e.Kr."
+    ],
     "MONTH": [
       "januar",
       "februar",
@@ -85,7 +93,7 @@ $provide.value("$locale", {
       "dec."
     ],
     "fullDate": "EEEE 'den' d. MMMM y",
-    "longDate": "d. MMM y",
+    "longDate": "d. MMMM y",
     "medium": "dd/MM/y HH.mm.ss",
     "mediumDate": "dd/MM/y",
     "mediumTime": "HH.mm.ss",

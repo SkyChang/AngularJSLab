@@ -34,6 +34,14 @@ $provide.value("$locale", {
       "\u05d9\u05d5\u05dd \u05e9\u05d9\u05e9\u05d9",
       "\u05d9\u05d5\u05dd \u05e9\u05d1\u05ea"
     ],
+    "ERANAMES": [
+      "\u05dc\u05e4\u05e0\u05d9 \u05d4\u05e1\u05e4\u05d9\u05e8\u05d4",
+      "\u05dc\u05e1\u05e4\u05d9\u05e8\u05d4"
+    ],
+    "ERAS": [
+      "\u05dc\u05e4\u05e0\u05d4\u05f4\u05e1",
+      "\u05dc\u05e1\u05e4\u05d9\u05e8\u05d4"
+    ],
     "MONTH": [
       "\u05d9\u05e0\u05d5\u05d0\u05e8",
       "\u05e4\u05d1\u05e8\u05d5\u05d0\u05e8",
@@ -76,8 +84,8 @@ $provide.value("$locale", {
     "medium": "d \u05d1MMM y HH:mm:ss",
     "mediumDate": "d \u05d1MMM y",
     "mediumTime": "HH:mm:ss",
-    "short": "dd/MM/yy HH:mm",
-    "shortDate": "dd/MM/yy",
+    "short": "d.M.y HH:mm",
+    "shortDate": "d.M.y",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {

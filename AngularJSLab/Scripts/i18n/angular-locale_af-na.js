@@ -16,6 +16,14 @@ $provide.value("$locale", {
       "Vrydag",
       "Saterdag"
     ],
+    "ERANAMES": [
+      "voor Christus",
+      "na Christus"
+    ],
+    "ERAS": [
+      "v.C.",
+      "n.C."
+    ],
     "MONTH": [
       "Januarie",
       "Februarie",
@@ -40,9 +48,9 @@ $provide.value("$locale", {
       "Sa"
     ],
     "SHORTMONTH": [
-      "Jan",
-      "Feb",
-      "Mar",
+      "Jan.",
+      "Feb.",
+      "Mrt.",
       "Apr",
       "Mei",
       "Jun",

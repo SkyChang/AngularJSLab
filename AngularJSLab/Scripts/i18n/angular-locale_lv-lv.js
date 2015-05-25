@@ -34,6 +34,14 @@ $provide.value("$locale", {
       "piektdiena",
       "sestdiena"
     ],
+    "ERANAMES": [
+      "pirms m\u016bsu \u0113ras",
+      "m\u016bsu \u0113r\u0101"
+    ],
+    "ERAS": [
+      "p.m.\u0113.",
+      "m.\u0113."
+    ],
     "MONTH": [
       "janv\u0101ris",
       "febru\u0101ris",
@@ -97,8 +105,8 @@ $provide.value("$locale", {
         "posSuf": ""
       },
       {
-        "gSize": 3,
-        "lgSize": 3,
+        "gSize": 0,
+        "lgSize": 0,
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,

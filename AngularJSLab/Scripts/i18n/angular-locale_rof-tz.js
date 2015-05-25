@@ -22,7 +22,7 @@ function getVF(n, opt_precision) {
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "kang'ama",
+      "kang\u2019ama",
       "kingoto"
     ],
     "DAY": [
@@ -33,6 +33,14 @@ $provide.value("$locale", {
       "Alhamisi",
       "Ijumaa",
       "Ijumamosi"
+    ],
+    "ERANAMES": [
+      "Kabla ya Mayesu",
+      "Baada ya Mayesu"
+    ],
+    "ERAS": [
+      "KM",
+      "BM"
     ],
     "MONTH": [
       "Mweri wa kwanza",

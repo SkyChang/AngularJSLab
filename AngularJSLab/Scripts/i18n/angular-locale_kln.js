@@ -28,18 +28,26 @@ $provide.value("$locale", {
     "DAY": [
       "Betutab tisap",
       "Betut netai",
-      "Betutab aeng'",
+      "Betutab aeng\u2019",
       "Betutab somok",
-      "Betutab ang'wan",
+      "Betutab ang\u2019wan",
       "Betutab mut",
       "Betutab lo"
     ],
+    "ERANAMES": [
+      "Amait kesich Jesu",
+      "Kokakesich Jesu"
+    ],
+    "ERAS": [
+      "AM",
+      "KO"
+    ],
     "MONTH": [
       "Mulgul",
-      "Ng'atyato",
+      "Ng\u2019atyato",
       "Kiptamo",
       "Iwat kut",
-      "Ng'eiyet",
+      "Ng\u2019eiyet",
       "Waki",
       "Roptui",
       "Kipkogaga",

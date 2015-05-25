@@ -34,6 +34,14 @@ $provide.value("$locale", {
       "petak",
       "subota"
     ],
+    "ERANAMES": [
+      "Prije Krista",
+      "Poslije Krista"
+    ],
+    "ERAS": [
+      "pr. Kr.",
+      "p. Kr."
+    ],
     "MONTH": [
       "sije\u010dnja",
       "velja\u010de",
@@ -76,8 +84,8 @@ $provide.value("$locale", {
     "medium": "d. MMM y. HH:mm:ss",
     "mediumDate": "d. MMM y.",
     "mediumTime": "HH:mm:ss",
-    "short": "d.M.yy. HH:mm",
-    "shortDate": "d.M.yy.",
+    "short": "dd.MM.y. HH:mm",
+    "shortDate": "dd.MM.y.",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {

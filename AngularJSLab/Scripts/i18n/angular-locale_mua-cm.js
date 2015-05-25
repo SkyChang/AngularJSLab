@@ -26,13 +26,21 @@ $provide.value("$locale", {
       "lilli"
     ],
     "DAY": [
-      "Com'yakke",
+      "Com\u2019yakke",
       "Comlaa\u0257ii",
       "Comzyii\u0257ii",
       "Comkolle",
       "Comkald\u01dd\u0253lii",
       "Comgaisuu",
       "Comzye\u0253suu"
+    ],
+    "ERANAMES": [
+      "K\u01ddPel Kristu",
+      "Pel Kristu"
+    ],
+    "ERAS": [
+      "KK",
+      "PK"
     ],
     "MONTH": [
       "F\u0129i Loo",

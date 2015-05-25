@@ -23,7 +23,7 @@ $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
       "pre podne",
-      "popodne"
+      "po podne"
     ],
     "DAY": [
       "nedelja",
@@ -33,6 +33,14 @@ $provide.value("$locale", {
       "\u010detvrtak",
       "petak",
       "subota"
+    ],
+    "ERANAMES": [
+      "Pre nove ere",
+      "Nove ere"
+    ],
+    "ERAS": [
+      "p. n. e.",
+      "n. e."
     ],
     "MONTH": [
       "januar",

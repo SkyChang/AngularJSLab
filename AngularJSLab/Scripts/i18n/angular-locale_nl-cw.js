@@ -22,8 +22,8 @@ function getVF(n, opt_precision) {
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "AM",
-      "PM"
+      "a.m.",
+      "p.m."
     ],
     "DAY": [
       "zondag",
@@ -33,6 +33,14 @@ $provide.value("$locale", {
       "donderdag",
       "vrijdag",
       "zaterdag"
+    ],
+    "ERANAMES": [
+      "voor Christus",
+      "na Christus"
+    ],
+    "ERAS": [
+      "v.Chr.",
+      "n.Chr."
     ],
     "MONTH": [
       "januari",

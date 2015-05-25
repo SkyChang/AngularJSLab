@@ -26,13 +26,21 @@ $provide.value("$locale", {
       "Z.MW."
     ],
     "DAY": [
-      "Ku w'indwi",
+      "Ku w\u2019indwi",
       "Ku wa mbere",
       "Ku wa kabiri",
       "Ku wa gatatu",
       "Ku wa kane",
       "Ku wa gatanu",
       "Ku wa gatandatu"
+    ],
+    "ERANAMES": [
+      "Mbere ya Yezu",
+      "Nyuma ya Yezu"
+    ],
+    "ERAS": [
+      "Mb.Y.",
+      "Ny.Y"
     ],
     "MONTH": [
       "Nzero",

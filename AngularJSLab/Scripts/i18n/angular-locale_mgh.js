@@ -23,7 +23,7 @@ $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
       "wichishu",
-      "mchochil'l"
+      "mchochil\u2019l"
     ],
     "DAY": [
       "Sabato",
@@ -33,6 +33,14 @@ $provide.value("$locale", {
       "Arahamisi",
       "Ijumaa",
       "Jumamosi"
+    ],
+    "ERANAMES": [
+      "Hinapiya yesu",
+      "Yopia yesu"
+    ],
+    "ERAS": [
+      "HY",
+      "YY"
     ],
     "MONTH": [
       "Mweri wo kwanza",
@@ -46,7 +54,7 @@ $provide.value("$locale", {
       "Mweri wo tisa",
       "Mweri wo kumi",
       "Mweri wo kumi na moja",
-      "Mweri wo kumi na yel'li"
+      "Mweri wo kumi na yel\u2019li"
     ],
     "SHORTDAY": [
       "Sab",

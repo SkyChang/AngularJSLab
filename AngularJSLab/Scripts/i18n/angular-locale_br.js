@@ -4,8 +4,8 @@ var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "AM",
-      "PM"
+      "A.M.",
+      "G.M."
     ],
     "DAY": [
       "Sul",
@@ -15,6 +15,14 @@ $provide.value("$locale", {
       "Yaou",
       "Gwener",
       "Sadorn"
+    ],
+    "ERANAMES": [
+      "BCE",
+      "CE"
+    ],
+    "ERAS": [
+      "BCE",
+      "CE"
     ],
     "MONTH": [
       "Genver",
@@ -31,13 +39,13 @@ $provide.value("$locale", {
       "Kerzu"
     ],
     "SHORTDAY": [
-      "sul",
-      "lun",
-      "meu.",
-      "mer.",
-      "yaou",
-      "gwe.",
-      "sad."
+      "Sul",
+      "Lun",
+      "Meu.",
+      "Mer.",
+      "Yaou",
+      "Gwe.",
+      "Sad."
     ],
     "SHORTMONTH": [
       "Gen",
@@ -84,10 +92,10 @@ $provide.value("$locale", {
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,
-        "negPre": "\u00a4\u00a0-",
-        "negSuf": "",
-        "posPre": "\u00a4\u00a0",
-        "posSuf": ""
+        "negPre": "-",
+        "negSuf": "\u00a0\u00a4",
+        "posPre": "",
+        "posSuf": "\u00a0\u00a4"
       }
     ]
   },

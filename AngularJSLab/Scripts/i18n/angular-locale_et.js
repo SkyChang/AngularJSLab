@@ -34,6 +34,14 @@ $provide.value("$locale", {
       "reede",
       "laup\u00e4ev"
     ],
+    "ERANAMES": [
+      "enne meie aega",
+      "meie aja j\u00e4rgi"
+    ],
+    "ERAS": [
+      "e.m.a.",
+      "m.a.j."
+    ],
     "MONTH": [
       "jaanuar",
       "veebruar",
@@ -73,8 +81,8 @@ $provide.value("$locale", {
     ],
     "fullDate": "EEEE, d. MMMM y",
     "longDate": "d. MMMM y",
-    "medium": "dd.MM.y H:mm.ss",
-    "mediumDate": "dd.MM.y",
+    "medium": "d. MMM y H:mm.ss",
+    "mediumDate": "d. MMM y",
     "mediumTime": "H:mm.ss",
     "short": "dd.MM.yy H:mm",
     "shortDate": "dd.MM.yy",

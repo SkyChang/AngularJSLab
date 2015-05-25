@@ -34,6 +34,14 @@ $provide.value("$locale", {
       "fredag",
       "l\u00f6rdag"
     ],
+    "ERANAMES": [
+      "f\u00f6re Kristus",
+      "efter Kristus"
+    ],
+    "ERAS": [
+      "f.Kr.",
+      "e.Kr."
+    ],
     "MONTH": [
       "januari",
       "februari",
@@ -58,18 +66,18 @@ $provide.value("$locale", {
       "l\u00f6r"
     ],
     "SHORTMONTH": [
-      "jan",
-      "feb",
-      "mar",
-      "apr",
+      "jan.",
+      "feb.",
+      "mars",
+      "apr.",
       "maj",
-      "jun",
-      "jul",
-      "aug",
-      "sep",
-      "okt",
-      "nov",
-      "dec"
+      "juni",
+      "juli",
+      "aug.",
+      "sep.",
+      "okt.",
+      "nov.",
+      "dec."
     ],
     "fullDate": "EEEE'en' 'den' d:'e' MMMM y",
     "longDate": "d MMMM y",
