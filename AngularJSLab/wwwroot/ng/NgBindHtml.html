@@ -13,10 +13,11 @@
         <h3>使用ng-bind-html</h3>
         <div ng-bind-html="HtmlString"></div>
         <h3>使用ng-bind-html-unsafe</h3>
-        @*註：AngularJS 1.2之後的版本，ng-bind-html-unsafe已被ng-bind-html取代*@
+        註：AngularJS 1.2之後的版本，ng-bind-html-unsafe已被ng-bind-html取代
         <div ng-bind-html-unsafe="HtmlString"></div>
     </div>
     <script src="/Scripts/angular.js"></script>
+    <script src="/Scripts/angular-sanitize.js"></script>
     <script>
     //2 - 載入ngSanitize模組
     angular.module('OverviewApp', ['ngSanitize'])

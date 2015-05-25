@@ -21,13 +21,13 @@
 <body>
 
     <div ng-app="OverviewApp" ng-controller="NgControllerController">
+        <!-- ng-model 對應到 ng-checked ，有對應的都會自動勾選-->
         <input type="checkbox" ng-model="all" />
         選擇全部
         <br /><br />
         <p ng-repeat="browser in BrowserList">
             <input type="checkbox" ng-checked="all" />
-            <img ng-src="{{browser.image}}" />
-            <a ng-href="{{browser.image}}">{{browser.name}}</a>
+            <span>{{browser.name}}</span>
         </p>
     </div>
     <script src="/Scripts/angular.js"></script>
@@ -35,9 +35,9 @@
     angular.module('OverviewApp', [])
            .controller('NgControllerController', function ($scope)
            {
-               $scope.BrowserList = [{ id: 1, name: 'Chrome', image: '/Images/chrome.png' },
-                                     { id: 2, name: 'Firefox', image: '/Images/firefox.png' },
-                                     { id: 3, name: 'Safari', image: '/Images/safari.png' }]
+               $scope.BrowserList = [{ id: 1, name: 'Chrome' },
+                                     { id: 2, name: 'Firefox'},
+                                     { id: 3, name: 'Safari'}]
            })
     </script>
 </body>

@@ -933,7 +933,6 @@
     <Content Include="wwwroot\ng\NgClass.html" />
     <Content Include="wwwroot\ng\NgClick.html" />
     <Content Include="wwwroot\ng\NgCloak.html" />
-    <Content Include="wwwroot\ng\NgController.html" />
     <Content Include="wwwroot\ng\NgHref.html" />
     <Content Include="wwwroot\ng\NgInclude.html" />
     <Content Include="wwwroot\ng\NgInit.html" />
@@ -945,7 +944,6 @@
     <Content Include="wwwroot\ng\NgSwitch.html" />
     <Content Include="wwwroot\ng\Page1.html" />
     <Content Include="wwwroot\ng\Page2.html" />
-    <Content Include="wwwroot\ng\Test.html" />
     <Content Include="wwwroot\ng\TestController.html" />
     <Content Include="wwwroot\ng\Timeout.html" />
   </ItemGroup>
