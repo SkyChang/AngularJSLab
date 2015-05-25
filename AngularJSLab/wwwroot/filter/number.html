@@ -7,12 +7,12 @@
 </head>
 <body ng-app="">
     <script src="/Scripts/angular.min.js"></script>
-    @*<script>
+    <script>
         angular.module('numberFilterExample', [])
           .controller('ExampleController', ['$scope', function ($scope) {
               $scope.val = 1234.56789;
           }]);
-    </script>*@
+    </script>
     <div>
         Enter number: <input ng-model='val'><br>
         Default formatting: <span id='number-default'>{{val | number}}</span><br>
