@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS CRUD Demo</title>
+</head>
+<body>
+    <!-- 主要區塊 -->
+    <div>
+        <h2>Customer 增加 AngularJS</h2>
+        <div ng-app="hrApp" ng-controller="employeesController">
+            <form>
+                <label>LastName</label>
+                <input type="text" ng-model="emp.lastName" />
+                <label>FirstName</label>
+                <input type="text" ng-model="emp.firstName" />
+                <button ng-click="add()">新增</button>
+                <button ng-click="update(emp.id)">更新</button>
+            </form>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>LastName</td>
+                            <td>FirstName</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="emp in emps">
+                            <td>{{emp.lastName}}</td>
+                            <td>{{emp.firstName}}</td>
+                            <td><button type="button" ng-click="edit(emp)">修改</button></td>
+                            <td><button type="button" ng-click="del(emp)">刪除</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script>
+        angular.module('hrApp', [])
+            .controller('employeesController', function ($scope, $http) {
+
+                var url = 'https://microsoft-apiapp3c679ab12e704c849b4436b45c149ad8.azurewebsites.net/api/'
+
+                $http.get(url + 'emps')
+                    .success(function (data) {
+                        $scope.emps = data;
+                    });
+
+                $scope.add = function () {
+                    $http.post(url + 'emps', $scope.emp)
+                        .success(function (data) {
+                            $scope.emps.push(data);
+                            alert('新增成功');
+                        })
+                        .error(function (err) {
+                            alert(err);
+                        });
+
+                };
+
+                $scope.update = function (id) {
+                    $http.put(url + 'emps/' + id, $scope.emp)
+                       .success(function (data) {
+                           alert('更新成功');
+                       })
+                       .error(function (err) {
+                           alert(err);
+                       });
+                };
+
+                $scope.edit = function (emp) {
+                    var index = $scope.emps.indexOf(emp);
+                    if (index !== -1) {
+                        $scope.emp = $scope.emps[index];
+                    }
+                    
+                };
+
+                $scope.del = function (emp) {
+                    if (confirm('您確定要刪除嗎?')) {
+
+                        $http.delete(url + 'emps/' + emp.id)
+                            .success(function (data) {
+                                var index = $scope.emps.indexOf(emp);
+                                if (index !== -1) {
+                                    $scope.emps.splice(index, 1);
+                                }
+                                alert('刪除成功')
+                            })
+                            .error(function (err) {
+                                alert('刪除成功');
+                            });
+                    }
+                };
+            });
+    </script>
+</body>
+</html>

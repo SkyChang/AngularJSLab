@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS CRUD Demo</title>
+</head>
+<body>
+    <!-- 主要區塊 -->
+    <div>
+        <h2>Customer 增加 AngularJS</h2>
+        <div ng-app="hrApp" ng-controller="employeesController">
+            <form>
+                <label>LastName</label>
+                <input type="text" ng-model="emp.lastName" />
+                <label>FirstName</label>
+                <input type="text" ng-model="emp.firstName" />
+                <button ng-click="add()">新增</button>
+                <button ng-click="update()">更新</button>
+            </form>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>LastName</td>
+                            <td>FirstName</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="emp in emps">
+                            <td>{{emp.lastName}}</td>
+                            <td>{{emp.firstName}}</td>
+                            <td><button type="button" ng-click="edit()">修改</button></td>
+                            <td><button type="button" ng-click="del()">刪除</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script>
+        angular.module('hrApp', [])
+            .controller('employeesController', function ($scope) {
+
+                $scope.emps = [{
+                    lastName: 'Sky',
+                    firstName: 'Chang'
+                }, {
+                    lastName: 'P',
+                    firstName: '柯'
+                }
+                ]
+
+                $scope.add = function () {
+                    alert('add ok');
+                };
+
+                $scope.update = function () {
+                    console.log('update ok');
+                };
+
+                $scope.edit = function () {
+                    alert('edit ok');
+                };
+
+                $scope.del = function () {
+                    console.log('del ok');
+                };
+            });
+    </script>
+</body>
+</html>
