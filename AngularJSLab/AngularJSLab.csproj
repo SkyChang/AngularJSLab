@@ -136,6 +136,10 @@
     <Content Include="Scripts\app\DirectiveLab\Common\componets.js" />
     <Content Include="Scripts\app\DirectiveLab\Controllers\directive-lab-controller.js" />
     <Content Include="Scripts\app\DirectiveLab\directive-lab-app.js" />
+    <Content Include="Scripts\app\emp\app.js" />
+    <Content Include="Scripts\app\emp\controllers\employeesController.js" />
+    <Content Include="Scripts\app\emp\controllers\employeesFormController.js" />
+    <Content Include="Scripts\app\emp\services\empService.js" />
     <Content Include="Scripts\app\event\common\eventDiv.js" />
     <Content Include="Scripts\app\event\common\event-div-template.html" />
     <Content Include="Scripts\app\event\controllers\eventListCtrl12.js" />
@@ -921,6 +925,8 @@
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="wwwroot\Crud\Lession5IncludeJSmin.html" />
+    <Content Include="wwwroot\Crud\Lession5IncludeJS.html" />
     <Content Include="wwwroot\Crud\Lession5Form.html" />
     <Content Include="wwwroot\Crud\Lession5List.html" />
     <Content Include="wwwroot\Crud\Lession5.html" />
