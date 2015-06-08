@@ -24,13 +24,21 @@ hrAppDirective.directive('empForm', [function () {
                 scope.onAdd();
             };
 
-            scope.update = function (id, isValid) {
+            scope.update = function (emp, isValid) {
                 if (!isValid) {
                     alert('有欄位未填!');
                     return;
                 }
-                scope.onUpdate({ id : id});
+                scope.onUpdate()(emp.id);
             }
+
+            //scope.update = function (id, isValid) {
+            //    if (!isValid) {
+            //        alert('有欄位未填!');
+            //        return;
+            //    }
+            //    scope.onUpdate({id:id});
+            //}
         }
     };
 }]);

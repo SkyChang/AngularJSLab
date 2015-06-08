@@ -23,7 +23,6 @@ angular.module('hrApp.employeesFormController', ['ui.router', 'hrApp.directive']
             .error(function (err) {
                 alert(err);
             });
-
     };
 
     $scope.update = function (id) {
