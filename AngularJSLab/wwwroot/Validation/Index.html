@@ -2,19 +2,19 @@
 <html>
 <head>
     <title></title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
             padding-top: 30px;
         }
     </style>
-    <script src="~/Scripts/angular.js"></script>
+    <script src="/Scripts/angular.js"></script>
     <script>
         angular.module('validationApp', [])
             .controller('mainController', function ($scope) {         
                 $scope.submitForm = function (isValid) {
                     if (isValid) {
-                        alert('our form is amazing');
+                        alert('完成!');
                     }
             };
         });

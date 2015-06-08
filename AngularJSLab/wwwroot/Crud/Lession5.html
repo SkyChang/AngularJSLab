@@ -81,8 +81,6 @@
 
         mainApp.controller('employeesFormController', function ($scope, $location, $routeParams ,empService) {
 
-            //alert($routeParams.eventId);
-
             if ($routeParams.eventId != undefined){
                 empService.get($routeParams.eventId)
                     .success(function (data) {

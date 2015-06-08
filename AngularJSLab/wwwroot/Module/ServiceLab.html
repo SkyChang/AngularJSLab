@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo</title>
+</head>
+<body>
+
+    <h2>ValueService</h2>
+
+    <div ng-app="serviceLabApp" ng-controller="serviceLab">
+
+        <h3>Service</h3>
+
+        <h3>Value</h3>
+        <span>{{valueLab}}</span>
+
+        <h3>Constant</h3>
+        <span>{{constantLab}}</span>
+
+        <h3>Provier</h3>
+        <span>{{providerLab}}</span>
+
+        <h3>Factory</h3>
+        <span>{{factoryLab}}</span>
+
+        <h3>Service</h3>
+        <span>{{serviceLab}}</span>
+
+
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script>
+        'use strict';
+
+        angular.module('serviceLabApp', [
+            'angularJSLab.serviceLab.controllers.serviceLab'
+        ])
+
+        angular.module('angularJSLab.serviceLab.controllers.serviceLab',
+            [
+                'angularJSLab.serviceLab.controllers.valueLab',
+                'angularJSLab.serviceLab.controllers.constantLab',
+                'angularJSLab.serviceLab.controllers.providerLab',
+                'angularJSLab.serviceLab.controllers.factoryLab',
+                'angularJSLab.serviceLab.controllers.servicesLab'
+            ])
+            .config(function (providerLabProvider) {
+                providerLabProvider.name = "Sky";
+
+            })
+            .controller('serviceLab', function (
+                $scope, valueLab, constantLab, providerLab, factoryLab, servicesLab) {
+
+                $scope.valueLab = valueLab;
+                $scope.constantLab = constantLab;
+                $scope.providerLab = providerLab.getHello();
+                $scope.factoryLab = factoryLab.getHello();
+                $scope.serviceLab = servicesLab.getHello();
+            });
+
+            //Value
+            angular.module('angularJSLab.serviceLab.controllers.valueLab', [])
+            .value('valueLab', 'Hello Value');
+
+            //constant
+            angular.module('angularJSLab.serviceLab.controllers.constantLab', [])
+            .constant('constantLab', 'Hello Constant');
+
+            //Provider
+            angular.module('angularJSLab.serviceLab.controllers.providerLab', [])
+            .provider('providerLab', function () {
+
+                this.name = '';
+                this.hello = 'Hello';
+
+                this.$get = function () {
+                    var that = this;
+                    return {
+                        getHello: function () {
+                            return that.hello + that.name;
+                        },
+                        name: that.name
+                    }
+                }
+
+            });
+
+            //Factory
+            angular.module('angularJSLab.serviceLab.controllers.factoryLab', [])
+            .factory('factoryLab', function () {
+
+                var service = {};
+                var name = 'Sky';
+                var hello = 'Hello';
+
+                service.getHello = function () {
+                    return hello + name;
+                }
+
+                return service;
+
+            });
+
+            //Service
+            angular.module('angularJSLab.serviceLab.controllers.servicesLab', [])
+            .service('servicesLab', function () {
+
+                var name = 'Sky';
+                var hello = 'Hello';
+
+                this.getHello = function () {
+                    return hello + name;
+                }
+
+            });
+
+    </script>
+</body>
+</html>
+

@@ -138,6 +138,10 @@
     <Content Include="Scripts\app\DirectiveLab\Common\componets.js" />
     <Content Include="Scripts\app\DirectiveLab\Controllers\directive-lab-controller.js" />
     <Content Include="Scripts\app\DirectiveLab\directive-lab-app.js" />
+    <Content Include="Scripts\app\emp7\app.js" />
+    <Content Include="Scripts\app\emp7\controllers\employeesController.js" />
+    <Content Include="Scripts\app\emp7\controllers\employeesFormController.js" />
+    <Content Include="Scripts\app\emp7\services\empService.js" />
     <Content Include="Scripts\app\emp6\app.js" />
     <Content Include="Scripts\app\emp6\controllers\employeesController.js" />
     <Content Include="Scripts\app\emp6\controllers\employeesFormController.js" />
@@ -155,13 +159,8 @@
     <Content Include="Scripts\app\event\controllers\eventListCtrl.js" />
     <Content Include="Scripts\app\event\app.js" />
     <Content Include="Scripts\app\event\services\eventsService.js" />
-    <Content Include="Scripts\app\event\filter\filterSample.js" />
     <Content Include="Scripts\app\HelloWorld\app.js" />
     <Content Include="Scripts\app\HelloWorld\Controllers\helloController.js" />
-    <Content Include="Scripts\app\ServiceLab\Controllers\service-lab-controller.js" />
-    <Content Include="Scripts\app\ServiceLab\service-lab-app.js" />
-    <Content Include="Scripts\app\ServiceLab\Services\iTunesServicesForHttp.js" />
-    <Content Include="Scripts\app\ServiceLab\Services\iTunesServices.js" />
     <Content Include="Scripts\app\event\data\angular-event-data-1.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -931,6 +930,12 @@
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="wwwroot\Crud\Lession7.html" />
+    <Content Include="wwwroot\Crud\Lession7Form.html" />
+    <Content Include="wwwroot\Crud\Lession7List.html" />
+    <Content Include="wwwroot\Crud\LessionxList.html" />
+    <Content Include="wwwroot\Crud\LessionxForm.html" />
+    <Content Include="wwwroot\Crud\Lessionx.html" />
     <Content Include="wwwroot\Crud\Lession6Form.html" />
     <Content Include="wwwroot\Crud\Lession6List.html" />
     <Content Include="wwwroot\Crud\Lession6.html" />
@@ -985,7 +990,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\ServiceLab.cshtml" />
+    <Content Include="wwwroot\Module\ServiceLab.html" />
     <Content Include="Views\Home\DirectiveLab.cshtml" />
     <Content Include="wwwroot\Lession3.html" />
     <Content Include="wwwroot\Lession2.html" />
@@ -1015,8 +1020,8 @@
     <Content Include="wwwroot\Filter\customer.html" />
     <Content Include="Views\Home\Lession10Index.cshtml" />
     <Content Include="Views\Home\Lession10List.cshtml" />
-    <Content Include="Views\Validation\Index.cshtml" />
-    <Content Include="Views\Promise\Index.cshtml" />
+    <Content Include="wwwroot\Validation\Index.html" />
+    <Content Include="wwwroot\Promise\Index.html" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Web.Debug.config">

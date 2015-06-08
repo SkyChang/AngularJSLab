@@ -6,8 +6,7 @@
     <title>Customer</title>
 </head>
 <body ng-app="CustomerExample">
-    <script src="/Scripts/angular.min.js"></script>    
-    <script src="/Scripts/app/event/filter/filterSample.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
     <script>
         angular.module('CustomerExample', ['eventFilters'])
           .controller('CustomerController',function ($scope) {
@@ -17,5 +16,13 @@
     <div ng-controller="CustomerController" ng-init="Test=true">
         {{Test | checkmark}}
     </div>
+    <script>
+        angular.module('eventFilters', [])
+            .filter('checkmark', function () {
+                return function (input) {
+                    return input ? '\u2713' : '\u2718';
+                };
+        });
+    </script>
 </body>
 </html>

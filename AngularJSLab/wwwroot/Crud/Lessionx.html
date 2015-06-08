@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS CRUD Demo</title>
+</head>
+<body>
+    <!-- 主要區塊 -->
+    <div>
+        <h2>Customer</h2>
+        <div ng-app="hrApp">
+           
+            <a href="#/emp">列表</a>
+            <a href="#/emp/add">新增</a>
+
+            <div ng-view></div>
+
+        </div>
+    </div>
+
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/angular-route.min.js"></script>
+    <script>
+        var mainApp = angular.module('hrApp', ['ngRoute'])
+
+        //Route
+        mainApp.config(['$routeProvider', function ($routeProvider) {
+            $routeProvider.
+              when('/emp', {
+                  templateUrl: '/wwwroot/Crud/lessionxList.html',
+                  controller: 'employeesController'
+              }).
+              when('/emp/add', {
+                  templateUrl: '/wwwroot/Crud/lessionxForm.html',
+                  controller: 'employeesFormController'
+              }).
+              when('/emp/edit/:eventId', {
+                  templateUrl: '/wwwroot/Crud/lessionxForm.html',
+                  controller: 'employeesFormController'
+              }).
+              otherwise({
+                  redirectTo: '/emp'
+              });
+        }]);
+
+       
+        //Ctrl
+        mainApp.controller('employeesController', function ($scope, $location, empService) {
+
+                empService.getAll().success(function (data) {
+                    $scope.emps = data;
+                });
+               
+                
+                $scope.edit = function (emp) {
+                    $location.path('/emp/edit/' + emp.id);
+                };
+
+                $scope.del = function (emp) {
+                    if (confirm('您確定要刪除嗎?')) {
+
+                        empService.remove(emp.id)
+                            .success(function (data) {
+                                var index = $scope.emps.indexOf(emp);
+                                if (index !== -1) {
+                                    $scope.emps.splice(index, 1);
+                                }
+                                alert('刪除成功');
+                            })
+                            .error(function (err) {
+                                alert('刪除成功');
+                            });
+                    }
+                };
+        });
+
+        mainApp.
+            controller('employeesFormController', function ($scope,$location, $routeParams, empService) {
+
+                if ($routeParams.eventId != undefined) {
+                    empService.get($routeParams.eventId)
+                        .success(function (data) {
+                            $scope.emp = data;
+                        }).error(function (err) {
+                            alert(err);
+                        });
+                }
+
+                $scope.add = function () {
+                    empService.add($scope.emp)
+                        .success(function (data) {
+                            alert('新增成功');
+                            $location.path('/emp');
+                        })
+                        .error(function (err) {
+                            alert(err);
+                        });
+                };
+
+                $scope.update = function (id) {
+                    empService.update(id, $scope.emp)
+                       .success(function (data) {
+                           alert('更新成功');
+                           $location.path('/emp');
+                       })
+                       .error(function (err) {
+                           alert(err);
+                       });
+                };
+            });
+
+
+            //service
+            mainApp.factory('empService', ['$http', function ($http) {
+                var url = 'https://microsoft-apiapp3c679ab12e704c849b4436b45c149ad8.azurewebsites.net/api/'
+
+                return {
+                    getAll: function () {
+                        return $http.get(url + 'emps');
+                    },
+                    get: function (id) {
+                        return $http.get(url + 'emps/' + id)
+                    },
+                    add: function (obj) {
+                        return $http.post(url + 'emps', obj)
+                    },
+                    update: function (id, obj) {
+                        return $http.put(url + 'emps/' + id, obj)
+                    },
+                    remove: function (id) {
+                        return $http.delete(url + 'emps/' + id)
+                    }
+                }
+
+
+            }]);
+    </script>
+
+</body>
+</html>

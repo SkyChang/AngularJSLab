@@ -1,0 +1,32 @@
+﻿<style>
+
+    .has-error {
+        color:red;
+    }
+
+</style>
+<form name="userForm" novalidate>
+
+    <!-- $invalid 該欄位是否通過驗證，驗證失敗則回傳true -->
+    <!-- $pristine 該欄位沒有輸入過值，則為true-->
+    {{ userForm.lastName.$invalid }}
+    {{ !userForm.lastName.$pristine }}
+    <div ng-class="{ 'has-error' : userForm.lastName.$invalid && !userForm.lastName.$pristine }">
+        <label>LastName</label>
+        <input type="text" name="lastName" class="form-control" ng-model="user.lastName" required>
+        <p ng-show="userForm.lastName.$invalid && !userForm.lastName.$pristine">Your LastName is required.</p>
+    </div>
+    {{ userForm.firstName.$invalid }}
+    {{ !userForm.firstName.$pristine }}
+    <div ng-class="{ 'has-error' : userForm.firstName.$invalid && !userForm.firstName.$pristine }">
+        <label>FirstName</label>
+        <input type="text" name="firstName" class="form-control" ng-model="user.firstName" ng-minlength="3" ng-maxlength="8" required>
+        <p ng-show="userForm.firstName.$invalid && !userForm.firstName.$pristine && userForm.firstName.$error.required">Your FirstName is required.</p>
+        <p ng-show="userForm.firstName.$error.minlength" >FirstName is too short.</p>
+        <p ng-show="userForm.firstName.$error.maxlength" >FirstName is too long.</p>
+    </div>
+
+    <button ng-click="add(userForm.$valid)" ng-disabled="userForm.$invalid">新增</button>
+    <button ng-click="update(emp.id,userForm.$valid)" ng-disabled="userForm.$invalid">更新</button>
+</form>
+
