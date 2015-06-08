@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/angular-resource.js"></script>
+    <script>
+        var promiseDemo = angular.module('promiseControllers', ['ngResource'])
+
+        promiseDemo.controller('PromiseCtrl', function ($scope, $http, $q) {
+
+                var url = 'https://microsoft-apiapp3c679ab12e704c849b4436b45c149ad8.azurewebsites.net/api/'
+
+
+                $http.get(url + 'emps/' + 25)
+                        .success(function (data) {
+                            alert(data);
+                        });
+
+                $http.get(url + 'emps')
+                   .success(function (data) {
+                       alert(data);
+                   });
+
+
+                $q.all([
+                    $http.get(url + 'emps'),
+                    $http.get(url + 'emps/' + 25)])
+                .then(function (result) {
+                    alert( 'Result1 : ' + result[1]);
+                    alert( 'Result2 : ' + result[0]);
+                });
+
+        });
+    </script>
+    <div ng-app="promiseControllers" ng-controller="PromiseCtrl">
+    </div>
+</body>
+</html>

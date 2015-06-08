@@ -1,14 +1,10 @@
 ﻿<style>
-
     .has-error {
-        color:red;
+        color: red;
     }
-
 </style>
 <form name="empForm" novalidate>
 
-    <!-- $invalid 該欄位是否通過驗證，驗證失敗則回傳true -->
-    <!-- $pristine 該欄位沒有輸入過值，則為true-->
     {{ empForm.lastName.$invalid }}
     {{ !empForm.lastName.$pristine }}
     <div ng-class="{ 'has-error' : empForm.lastName.$invalid && !empForm.lastName.$pristine }">
@@ -22,11 +18,10 @@
         <label>FirstName</label>
         <input type="text" name="firstName" class="form-control" ng-model="emp.firstName" ng-minlength="3" ng-maxlength="8" required>
         <p ng-show="empForm.firstName.$invalid && !empForm.firstName.$pristine && empForm.firstName.$error.required">Your FirstName is required.</p>
-        <p ng-show="empForm.firstName.$error.minlength" >FirstName is too short.</p>
-        <p ng-show="empForm.firstName.$error.maxlength" >FirstName is too long.</p>
+        <p ng-show="empForm.firstName.$error.minlength">FirstName is too short.</p>
+        <p ng-show="empForm.firstName.$error.maxlength">FirstName is too long.</p>
     </div>
 
     <button ng-click="add(empForm.$valid)" ng-disabled="empForm.$invalid">新增</button>
     <button ng-click="update(emp.id,empForm.$valid)" ng-disabled="empForm.$invalid">更新</button>
 </form>
-
